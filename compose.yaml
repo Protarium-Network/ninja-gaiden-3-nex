@@ -32,6 +32,7 @@ services:
       # validated. Flip to shared mode by setting PN_NG3_LOCAL_MODE=0
       # and providing the two NEX_* secrets (matching your account server).
       PN_NG3_LOCAL_MODE: ${PN_NG3_LOCAL_MODE:-1}
+      PN_NG3_LEGACY_SIGNATURE: ${PN_NG3_LEGACY_SIGNATURE:-}
       PN_NG3_SETTINGS_PATH: /home/go/app/settings.json
       PN_NG3_NEX_TOKEN_AES_KEY: ${PN_NG3_NEX_TOKEN_AES_KEY:-}
       PN_NG3_NEX_PASSWORD_SECRET: ${PN_NG3_NEX_PASSWORD_SECRET:-}
