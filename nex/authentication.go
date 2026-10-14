@@ -24,8 +24,8 @@ var AuthenticationEndpoint *nex.PRUDPEndPoint
 func StartAuthenticationServer() {
 	AuthenticationServer = nex.NewPRUDPServer()
 
-	// Wrong value = 106-0502 / endless CONNECT retransmit. Most 3.4.13 titles
-	// on this stack need false; flip with PN_NG3_LEGACY_SIGNATURE=1.
+	// Wrong value = 106-0502 / endless CONNECT retransmit. This title needs
+	// true (see globals/config.go).
 	AuthenticationServer.PRUDPV1Settings.LegacyConnectionSignature = globals.LegacyConnectionSignature
 
 	AuthenticationEndpoint = nex.NewPRUDPEndPoint(1)

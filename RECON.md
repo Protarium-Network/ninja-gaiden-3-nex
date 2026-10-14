@@ -55,7 +55,9 @@ Game-side class names (RTTI strings) show what each is for:
 
 Auth + Secure endpoints; secure registers SecureConnection, Utility, NAT
 Traversal, MatchMaking, MatchMakingExt, MatchmakeExtension, Ranking,
-DataStore. Which exact RMC methods the retail code calls was **not** mapped
-(the executable is stripped); the server therefore enables the full common
-protocol set and logs every call (`[NG3 Secure] PID=… protocol=… method=…`) so
-unhandled methods show up on the first console session.
+DataStore. The executable is stripped, so which exact RMC methods the game
+calls was not mapped statically; every call is logged
+(`[NG3 Secure] PID=… protocol=… method=…`) instead.
+
+`LegacyConnectionSignature` has to be `true` for this title: with `false` the
+console never accepts the CONNECT-ACK and reports 106-0502.

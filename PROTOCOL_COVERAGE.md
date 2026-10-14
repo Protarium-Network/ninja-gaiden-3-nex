@@ -13,5 +13,7 @@
 Not registered: Notification, Monitoring, Health, AccountManagement
 (housekeeping clients the game does not need answered).
 
-**Unverified on a console.** The first session's log (`[NG3 Secure] …`) will
-say which methods the retail code really calls.
+Tested on real consoles: login, secure register, NAT traversal, room
+creation/matchmaking, ranking and DataStore calls all went through. Not every
+game mode has been exercised. The `[NG3 Secure]` log lines show which methods
+a given mode calls.

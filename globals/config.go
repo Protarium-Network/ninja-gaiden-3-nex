@@ -47,10 +47,11 @@ const (
 )
 
 // LegacyConnectionSignature selects the PRUDPv1 CONNECT-ACK signature scheme.
-// Unverified on a console for this title: most 3.4.13 Wii U titles here need
-// false (Sonic Lost World, DKC:TF), Trine 2 needed true. Set
-// PN_NG3_LEGACY_SIGNATURE=1 if the console reports 106-0502.
-var LegacyConnectionSignature = false
+// This title needs true: with false the console gets no valid CONNECT-ACK and
+// fails with 106-0502. (Other 3.4.13 titles in this family behave the other
+// way around, so don't copy this value blindly.) PN_NG3_LEGACY_SIGNATURE=0|1
+// overrides it.
+var LegacyConnectionSignature = true
 
 func init() {
 	if v := strings.TrimSpace(os.Getenv("PN_NG3_LEGACY_SIGNATURE")); v != "" {
